@@ -27,13 +27,18 @@ head(mySubset)
 
 
 ## get line plot and then add two more series with lines(). Finally add legend 
+## project instructions state we should save the plot to a .png file with width = 480, height = 480
+##
+##
+## note: for some other problems / plots, saving to PNG ile with dev.copy() worked fine. With THIS plot,
+## the only way the legend does not becme distorted in the plot is to print directly to a PNG file, bypasing the screen
+## device!!!
+png("C:\\andyXP\\learnings\\coursera_ds_exploratory\\project_1\\plot3.png", width=480, height=480)
 with(mySubset, plot(Global_active_power ~ datetime, type="l", ylab = "Global Active Power"))
 ## get line chart time series of global active power by date and time
 with(mySubset, plot(Sub_metering_1 ~ datetime,type="l",ylab = "Energy sub metering", col = "black"))
 with(mySubset, lines(Sub_metering_2 ~ datetime, col = "red"))
 with(mySubset, lines(Sub_metering_3 ~ datetime, col = "blue"))
 legend("topright",c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col = c("black","red","blue"), lty = c(1,1,1))
-
-## project instructions state we should save the plot to a .png file
-dev.copy(png, file = "C:\\andyXP\\learnings\\coursera_ds_exploratory\\project_1\\plot3.png")
+##legend(-1,1,c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col = c("black","red","blue"), lty = c(1,1,1))
 dev.off()

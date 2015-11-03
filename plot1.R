@@ -30,7 +30,7 @@ par(mfrow = c(1,1))
 with(mySubset, hist(Global_active_power, col = "red", main = "Global Active Power", xlab = "Global Active Power (Kilowatts)")) 
      
      
-## project instructions state we should save the plot to a .png file
-dev.copy(png, file = "C:\\andyXP\\learnings\\coursera_ds_exploratory\\project_1\\plot1.png")
+## project instructions state we should save the plot to a .png file with width = 480, height = 480
+dev.copy(png, file = "C:\\andyXP\\learnings\\coursera_ds_exploratory\\project_1\\plot1.png",width = 480, height = 480)
 dev.off()
 
