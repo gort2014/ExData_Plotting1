@@ -27,7 +27,7 @@ head(mySubset)
 
 
 ## get line plot of power versus datetime 
-with(mySubset, plot(Global_active_power ~ datetime, type="l", ylab = "Global Active Power"))
+with(mySubset, plot(Global_active_power ~ datetime, type="l", ylab = "Global Active Power (kilowatts)"))
 
 ## project instructions state we should save the plot to a .png file with width = 480, height = 480
 dev.copy(png, file = "C:\\andyXP\\learnings\\coursera_ds_exploratory\\project_1\\plot2.png",width = 480, height = 480)
